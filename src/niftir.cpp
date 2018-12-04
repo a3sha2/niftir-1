@@ -27,7 +27,8 @@ using namespace std;
 extern "C" {
 
 //#include "International.h"
-
+// [[Rcpp::export]]
+int testfun(Rcpp::Nullable<Rcpp::IntegerVector> kfolds = R_NilValue) {
 SEXP getListElement(SEXP list, const char *str)
 {
     SEXP elmt = R_NilValue, names = getAttrib(list, R_NamesSymbol);
@@ -41,7 +42,7 @@ SEXP getListElement(SEXP list, const char *str)
     	}
     return elmt;
 }
-
+}
 
 /****************************************
  * Helper functions
